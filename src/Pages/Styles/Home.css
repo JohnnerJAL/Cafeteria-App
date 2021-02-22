@@ -1,0 +1,60 @@
+.home {
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .logo {
+  margin: auto;
+  color: white;
+  transform: scale(10);
+}
+
+.home .button {
+  background-color: white;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px #6C3C24;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.home .button:hover {
+  cursor: pointer;/**/
+}
+
+.home .button:active {
+  transform: scale(0.98);
+}
+
+.home .button i {
+  padding-left: 10px;
+  transform: scale(1.4);
+}
+
+.home .networks {
+  width: 40%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.home .networks i {
+  transform: scale(1.2);
+}
+
+.home .networks i:hover {
+  cursor: pointer;/**/
+}
+
+.home .networks i:active {
+  transform: scale(1.15);
+}

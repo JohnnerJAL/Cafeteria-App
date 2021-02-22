@@ -1,5 +1,24 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 62.5%; */
+}
+
+:root {
+  --primary-color: #E8723E;
+  --secondary-color: #6C3C24;
+  --tertiary-color: #FBBB3B;
+  --quaternary: #0000;
+  /* --quinary */
+}
+
 body {
-  margin: 0;
+  min-height: 100vh;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
