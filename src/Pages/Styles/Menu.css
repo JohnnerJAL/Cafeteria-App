@@ -79,12 +79,12 @@
 }
 
 /*-------------List of items--------------*/
-.list-of-items {
+.menu .list-of-items {
   height: 65%;
   padding-top: 50px;
 }
 
-.list-of-items article {
+.menu .list-of-items article {
   position: relative;
   width: 80%;
   margin: auto;
@@ -94,11 +94,11 @@
   margin-top: 50px;
 }
 
-.list-of-items article:first-child {
+.menu .list-of-items article:first-child {
   margin-top: 0%;
 }
 
-.list-of-items article figure {
+.menu .list-of-items article figure {
   position: absolute;
   top: -40px;
   left: 0;
@@ -119,21 +119,21 @@
   padding-top: 40px;
 }
 
-.list-of-items article .contents p:nth-of-type(1) {
+.menu .list-of-items article .contents p:nth-of-type(1) {
   color: gray;
 }
 
-.list-of-items article .contents p:nth-of-type(2) {
+.menu .list-of-items article .contents p:nth-of-type(2) {
   font-weight: bold;
 }
 
-.list-of-items article .contents p:last-child {
+.menu .list-of-items article .contents p:last-child {
   font-weight: bold;
   font-size: 24px;
 }
 
 /*Buttons less & more*/
-.list-of-items article .button {
+.menu .list-of-items article .button {
   position: absolute;
   height: 40px;
   width: 50px;
@@ -143,18 +143,18 @@
   background-color: rgb(218, 205, 136);
 }
 
-.list-of-items article .button-left {
+.menu .list-of-items article .button-left {
   bottom: 0%;
   border-radius: 0 12px 0 12px;
 }
 
-.list-of-items article .button-right {
+.menu .list-of-items article .button-right {
   bottom: 0%;
   right: 0%;
   border-radius: 12px 0 12px 0;
 }
 
-.list-of-items article .circle {
+.menu .list-of-items article .circle {
   border: solid var(--secondary-color);
   height: 25px;
   width: 25px;
