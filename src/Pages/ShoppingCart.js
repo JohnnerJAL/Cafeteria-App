@@ -2,7 +2,7 @@ import React from "react";
 
 function ShoppingCart() {
   return (
-    <section>
+    <section className="shopping-cart">
       ShoppingCart
     </section>
   )

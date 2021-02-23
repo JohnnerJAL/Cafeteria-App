@@ -1,12 +1,13 @@
 .menu {
-  min-height: 100vh;
+  height: 100vh;
 }
+/*--------------Filter--------------*/
 .menu .form {
-  position: relative;
-  top: 20px;
-  left: 100px;
-  width: 230px;
-  box-shadow: 1px 1px 10px 1px gray;/*¡?¡?*/
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  width: 220px;
+  box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.4);/*¡?¡?*/
   border-radius: 4px;
 }
 
@@ -16,22 +17,191 @@
 }
 
 .menu .form input {
+  width: 85%;
   border: none;
   padding: 5px;
-  height: 35px;
+  height: 30px;
   font-size: 20px;
-  width: 85%;
 }
+
+.menu .form input:focus {
+  outline: none;
+}
+
 .menu .form i {
   color: gray;
   transform: scale(1.2);
 }
 
-.menu .main {
-  border: solid;
+/*----------General Articles-----------*/
+.menu .container-general-articles {
+  height: 25%;
+  padding-top: 80px;
+}
+
+.menu .general-articles {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.menu .general-articles .arrow {
+  display: flex;
+  color: var(--secondary-color);
+}
+
+.menu .general-articles i {
+  margin: auto;
+  transform: scale(2);
+}
+
+.menu .general-articles .articles {
+  display: flex;
+  justify-content: space-between;
   width: 80%;
 }
 
-.menu .main div figure img {
-  width: 100%;
+.menu .general-articles .articles figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: gray;
+}
+
+.menu .general-articles .articles figure div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+/*-------------List of items--------------*/
+.list-of-items {
+  height: 65%;
+  padding-top: 50px;
+}
+
+.list-of-items article {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  box-shadow: 1px 1px 16px 4px rgba(128, 128, 128, 0.4);
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 50px;
+}
+
+.list-of-items article:first-child {
+  margin-top: 0%;
+}
+
+.list-of-items article figure {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+.menu .list-of-items article .contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 150px;
+  padding-top: 40px;
+}
+
+.list-of-items article .contents p:nth-of-type(1) {
+  color: gray;
+}
+
+.list-of-items article .contents p:nth-of-type(2) {
+  font-weight: bold;
+}
+
+.list-of-items article .contents p:last-child {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/*Buttons less & more*/
+.list-of-items article .button {
+  position: absolute;
+  height: 40px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(218, 205, 136);
+}
+
+.list-of-items article .button-left {
+  bottom: 0%;
+  border-radius: 0 12px 0 12px;
+}
+
+.list-of-items article .button-right {
+  bottom: 0%;
+  right: 0%;
+  border-radius: 12px 0 12px 0;
+}
+
+.list-of-items article .circle {
+  border: solid var(--secondary-color);
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: var(--secondary-color);
+}
+
+/*-----------To shopping cart------------*/
+.menu > div:last-child {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu .to-shopping-cart {
+  height: 45px;
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--tertiary-color);
+  border-radius: 24px;
+  color: black;
+  text-decoration: none;
+  box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.4);
+}
+
+.menu .to-shopping-cart:active {
+  transform: scale(0.99);
+}
+
+.menu .to-shopping-cart i {
+  transform: scale(1.5);
+}
+
+.menu .to-shopping-cart p {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 24px;
 }

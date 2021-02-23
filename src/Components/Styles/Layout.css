@@ -4,10 +4,10 @@
 
 .layout .logo {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 35px;
+  left: 40px;
 }
 
 .layout .logo i {
-  transform: scale(2);
+  transform: scale(2.5);
 }
