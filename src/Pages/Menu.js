@@ -2,94 +2,60 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./Styles/Menu.css";
-import hamburgerImage from "../Images/Hamburger-pexels.jpg";
-import empanadaImage from "../Images/Empanadas-pexels.jpg";
-import beerImage from "../Images/beer-pexels.jpg";
 
-
-function Menu() {
-
-  const hamburger = {
-    backgroundImage: `url('${hamburgerImage}')`
-  }
-  const empanada = {
-    backgroundImage: `url('${empanadaImage}')`
-  }
-  const beer = {
-    backgroundImage: `url('${beerImage}')`
-  }
+function Menu(props) {
 
   return (
     <section className="menu">
-      <form action="" className="form">
+      <form action="" className="form" onSubmit={e => e.preventDefault()}>
         <label htmlFor="search" className="label">
-          <input id="search" type="text" placeholder="Search"/>
-          <i class="fas fa-search"></i>
+          <input id="search" type="text" name="search" onChange={props.handleChange} placeholder="Search"/>
+          <i className="fas fa-search"></i>
         </label>
       </form>
 
       <div className="container-general-articles">
         <div className="general-articles">
-          <div className="arrow"><i class="fas fa-chevron-left"></i></div>
+          <div className="arrow"><i className="fas fa-chevron-left"></i></div>
           <div className="articles">
-            <figure>
-              <div style={empanada}></div>
-              <figcaption>Empanada</figcaption>
-            </figure>
-            <figure>
-              <div style={hamburger}></div>
-              <figcaption>Hamburgesa</figcaption>
-            </figure>
-            <figure>
-              <div style={beer}></div>
-              <figcaption>Bebidas</figcaption>
-            </figure>
-          {/* <figure className="inactive">
-            <div style={beer}></div>
-            <figcaption>Bebidas</figcaption>
-          </figure> */}
+            {props.categories.map(e => {
+              return (
+                <figure onClick={props.clickCategories} data-category={e.category} key={e.id}>
+                  <div style={e.styles} data-category={e.category}></div>
+                  <figcaption data-category={e.category}>{e.name}</figcaption>
+                </figure>
+              )
+            })}
           </div>
-          <div className="arrow"><i class="fas fa-chevron-right"></i></div>
+          <div className="arrow"><i className="fas fa-chevron-right"></i></div>
         </div>
       </div>
 
       <div className="list-of-items">
-        <article>
-          <figure style={empanada}></figure>
-          <div className="contents">
-            <h4>Empanada de carne</h4>
-            <p>Empanada de carne con huevo</p>
-            <p>$ 1800</p>
-            <p>1</p>
-          </div>
-          <div className="button button-left">
-            <div className="circle">-</div>
-          </div>
-          <div className="button button-right">
-            <div className="circle">+</div>
-          </div>
-        </article>
-
-        <article>
-          <figure style={empanada}></figure>
-          <div className="contents">
-            <h4>Empanada de pollo</h4>
-            <p>Empanada de pollo con huevo</p>
-            <p>$ 1800</p>
-            <p>1</p>
-          </div>
-          <div className="button button-left">
-            <div className="circle">-</div>
-          </div>
-          <div className="button button-right">
-            <div className="circle">+</div>
-          </div>
-        </article>
+        {props.list.map(e => {
+          return (
+            <article key={e.id}>
+              <figure style={e.styles}></figure>
+              <div className="contents">
+                <h4>{e.name}</h4>
+                <p>{e.description}</p>
+                <p>$ {e.cost}</p>
+                <p>1</p>
+              </div>
+              <div className="button button-left" onClick={props.decrease} data-product={e.id}>
+                <div className="circle" data-product={e.id}>-</div>
+              </div>
+              <div className="button button-right" onClick={props.increase} data-product={e.id}>
+                <div className="circle" data-product={e.id}>+</div>
+              </div>
+            </article>
+          )
+        })}
       </div>
-
+      
       <div>
-        <Link  to="/shopping-cart" className="to-shopping-cart">
-          <i class="fas fa-cart-arrow-down"></i>
+        <Link to="/shopping-cart" className="to-shopping-cart">
+          <i className="fas fa-cart-arrow-down"></i>
           <p className="quantity">2</p>
         </Link>
       </div>

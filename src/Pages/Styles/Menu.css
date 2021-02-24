@@ -70,6 +70,10 @@
   color: gray;
 }
 
+.menu .general-articles .articles figure:hover {
+  cursor: pointer;
+}
+
 .menu .general-articles .articles figure div {
   width: 50px;
   height: 50px;
@@ -82,6 +86,7 @@
 .menu .list-of-items {
   height: 65%;
   padding-top: 50px;
+  overflow-y: scroll;
 }
 
 .menu .list-of-items article {
@@ -92,6 +97,10 @@
   text-align: center;
   border-radius: 12px;
   margin-top: 50px;
+}
+
+.menu .list-of-items article.hidden {
+  display: none;
 }
 
 .menu .list-of-items article:first-child {

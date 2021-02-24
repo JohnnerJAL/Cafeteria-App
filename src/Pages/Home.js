@@ -8,18 +8,18 @@ function Home() {
   return (
     <section className="home">
       <div className="logo">
-        <i class="fas fa-hamburger"></i>
+        <i className="fas fa-hamburger"></i>
       </div>
 
       <Link  to="/menu" className="button">
         ¡ORDENAR AHORA!
-        <i class="fas fa-hand-point-up"></i>
+        <i className="fas fa-hand-point-up"></i>
       </Link>
 
       <div className="networks">
         <p>Visítanos:</p>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-instagram"></i>
+        <i className="fab fa-facebook-f"></i>
+        <i className="fab fa-instagram"></i>
       </div>
     </section>
   )

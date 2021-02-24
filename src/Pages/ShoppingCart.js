@@ -23,7 +23,7 @@ function ShoppingCart() {
     <section className="shopping-cart">
       <div className="title">
         <h1>Mi Carrito</h1>
-        <i class="fas fa-cart-arrow-down"></i>
+        <i className="fas fa-cart-arrow-down"></i>
       </div>
 
       <div className="message-container">
@@ -73,7 +73,7 @@ function ShoppingCart() {
        <div>
           <Link  to="/menu">
             <p>Agregar más productos</p>
-            {/* <i class="fas fa-cart-arrow-down"></i> */}
+            {/* <i className="fas fa-cart-arrow-down"></i> */}
           </Link>
         </div>
 
@@ -91,7 +91,7 @@ function ShoppingCart() {
       <div>
         <Link  to="/shopping-cart">{/*¡?*/}
           <p>Confirmar orden</p>
-          <i class="fab fa-whatsapp"></i>
+          <i className="fab fa-whatsapp"></i>
         </Link>
       </div>
       </div>
