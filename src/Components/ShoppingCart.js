@@ -105,8 +105,24 @@ function ShoppingCart(props) {
 
   const [cart, setCart] = React.useState(initialStateCart);
 
+  const increase = e => {
+    setCart({
+      ...cart,
+      [e.target.dataset.product]: cart[e.target.dataset.product] + 1
+    });
+  }
+
+  const decrease = e => {
+    if(cart[e.target.dataset.product] > 0) {
+      setCart({
+        ...cart,
+        [e.target.dataset.product]: cart[e.target.dataset.product] - 1
+      });
+    }
+  }
+
   return (
-    <JAL.Provider value={{ PRODUCTS ,cart, setCart}}>
+    <JAL.Provider value={{ PRODUCTS ,cart, increase, decrease }}>
       {props.children}
     </JAL.Provider>
   )

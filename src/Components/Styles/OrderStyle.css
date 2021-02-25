@@ -1,8 +1,8 @@
-.shopping-cart {
+.order {
   height: 100vh;
 }
 
-.shopping-cart .title {
+.order .title {
   position: absolute;
   top: 35px;
   left: 0%;
@@ -14,24 +14,24 @@
   align-items: center;
 }
 
-.shopping-cart .title h1 {
+.order .title h1 {
   font-size: 24px;
   color: var(--secondary-color);
 }
 
-.shopping-cart .title i {
+.order .title i {
   transform: scale(2);
   color: var(--tertiary-color);
 }
 
 /*-----------------Alert Message----------------*/
-.shopping-cart .message-container {
+.order .message-container {
   height: 30%;
   display: flex;
   align-items: flex-end;
 }
 
-.shopping-cart .message {
+.order .message {
   width: 90%;
   margin: 0 auto;
   padding: 5px;
@@ -39,52 +39,68 @@
   border-radius: 12px;
 }
 
-.shopping-cart .message h1 {
+.order .message h1 {
   color: var(--primary-color);
   padding: 5px;
 }
 
-.shopping-cart .message p {
+.order .message p {
   text-align: justify;
   padding: 5px;
 }
 
 /*-------------Articles shopping Cart-------------*/
-.shopping-cart .articles {
+.order .articles {
   height: 40%;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
 }
 
-.shopping-cart .articles article {
+.order .articles .article-container {
+  margin: auto;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.order .articles article {
   position: relative;
   height: 80px;
   width: 70%;
-  margin-top: 15px;
+  margin: auto;
   transform: translateX(20px);
   background-color: rgb(233, 220, 145);
   border-radius: 12px;
   text-align: center;
 }
 
-.shopping-cart .articles article .contents {
+.order .articles article .contents {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding: 0 40px 0 40px;
 }
 
-.shopping-cart .articles article .contents p:last-child {
+.order .articles article .contents p:nth-of-type(1) {
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+.order .articles article .contents p:nth-of-type(2) {
+  font-weight: bold;
+}
+
+.order .articles article .contents p:last-child {
   position: absolute;
   right: 0%;
   width: 35px;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.shopping-cart .articles article figure {
+.order .articles article figure {
   position: absolute;
   left: -40px;
   top: 0%;
@@ -97,11 +113,11 @@
   background-size: cover;
 }
 
-.shopping-cart .articles article .button {
+.order .articles article .button {
   position: absolute;
 }
 
-.shopping-cart .articles article .circle {
+.order .articles article .circle {
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -113,26 +129,25 @@
   font-size: 24px;
 }
 
-.shopping-cart .articles article .button-left {
+.order .articles article .button-left {
   right: 5px;
-  bottom: 5px;
+  bottom: 2px;
 }
 
-.shopping-cart .articles article .button-right {
+.order .articles article .button-right {
   right: 5px;
-  top: 5px;
+  top: 2px;
 }
 
 /*-------------------Resume-------------------*/
-.shopping-cart .resume {
-  /* border: solid greenyellow; */
+.order .resume {
   height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.shopping-cart .resume div a {
+.order .resume div a {
   margin: auto;
   display: flex;
   justify-content: space-evenly;
@@ -142,17 +157,17 @@
   border-radius: 12px;
 }
 
-.shopping-cart .resume div:first-child a {
+.order .resume div:first-child a {
   width: 60%;
   background-color: var(--tertiary-color);
 }
 
-.shopping-cart .resume div a p {
+.order .resume div a p {
   text-align: center;
   padding: 10px;
 }
 
-.shopping-cart .resume > div:nth-of-type(2) .row {
+.order .resume > div:nth-of-type(2) .row {
   width: 70%;
   margin: auto;
   padding: 2px;
@@ -160,16 +175,16 @@
   justify-content: space-between;
 }
 
-.shopping-cart .resume > div:nth-of-type(2) .row:last-child {
+.order .resume > div:nth-of-type(2) .row:last-child {
   font-weight: bold;
 }
 
-.shopping-cart .resume div:last-child a {
+.order .resume div:last-child a {
   width: 70%;
   background-color: var(--primary-color);
   font-size: 20px;
 }
 
-.shopping-cart .resume div:last-child a i {
+.order .resume div:last-child a i {
   transform: scale(1.5);
 }

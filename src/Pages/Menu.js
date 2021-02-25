@@ -4,7 +4,7 @@ import { JAL } from "../Components/ShoppingCart";
 import MenuStyle from "../Components/MenuStyle";
 
 function Menu() {
-  const { PRODUCTS, cart, setCart } = useContext(JAL);
+  const { PRODUCTS, cart, increase, decrease } = useContext(JAL);
 
   const [list, setList] = React.useState(PRODUCTS.empanadas);
   const [search, setSearch] = React.useState("");
@@ -31,22 +31,6 @@ function Menu() {
           .includes(search.toLowerCase());
       })
   : filteredList = list;
-
-  const increase = e => {
-    setCart({
-      ... cart,
-      [e.target.dataset.product]: cart[e.target.dataset.product] + 1
-    });
-  }
-
-  const decrease = e => {
-    if(cart[e.target.dataset.product] > 0) {
-      setCart({
-        ... cart,
-        [e.target.dataset.product]: cart[e.target.dataset.product] - 1
-      });
-    }
-  }
 
   const jal = Object.values(cart).reduce((accum, curr) => accum + curr);
 
