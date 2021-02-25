@@ -1,11 +1,10 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Layout from "./Components/Layout";
 import Home from "./Pages/Home";
-import MenuContainer from "./Pages/MenuContainer";
-import ShoppingCart from "./Pages/ShoppingCart";
-
-import './App.css';
+import Layout from "./Components/Layout";
+import { ShoppingCart} from "./Components/ShoppingCart";
+import Menu from "./Pages/Menu";
+import Order from "./Pages/Order";
 
 function App() {
   return (
@@ -13,8 +12,10 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home}/>
         <Layout>
-          <Route exact path="/menu" component={MenuContainer}/>
-          <Route exact path="/shopping-cart" component={ShoppingCart}/>
+          <ShoppingCart>
+            <Route exact path="/menu" component={Menu}/>
+            <Route exact path="/order" component={Order}/>
+          </ShoppingCart>
         </Layout>
       </Switch>
     </BrowserRouter>

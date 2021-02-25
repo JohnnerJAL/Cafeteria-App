@@ -6,7 +6,7 @@ import hamburgerImage from "../Images/Hamburger-pexels.jpg";
 import empanadaImage from "../Images/Empanadas-pexels.jpg";
 import beerImage from "../Images/beer-pexels.jpg";
 
-function ShoppingCart() {
+function Order() {
 
   const hamburger = {
     backgroundImage: `url('${hamburgerImage}')`
@@ -17,7 +17,6 @@ function ShoppingCart() {
   const beer = {
     backgroundImage: `url('${beerImage}')`
   }
-
 
   return (
     <section className="shopping-cart">
@@ -89,7 +88,7 @@ function ShoppingCart() {
       </div>
 
       <div>
-        <Link  to="/shopping-cart">{/*¡?*/}
+        <Link  to="/order">{/*¡?*/}
           <p>Confirmar orden</p>
           <i className="fab fa-whatsapp"></i>
         </Link>
@@ -99,4 +98,4 @@ function ShoppingCart() {
   )
 }
 
-export default ShoppingCart;
+export default Order;

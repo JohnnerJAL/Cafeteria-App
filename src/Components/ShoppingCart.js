@@ -1,12 +1,12 @@
-import React from "react";
-import Menu from "./Menu";
+import React, { createContext } from "react";
 
 import empanadaImage from "../Images/Empanadas-pexels.jpg";
 import hamburgerImage from "../Images/Hamburger-pexels.jpg";
 import drinkImage from "../Images/beer-pexels.jpg";
-// import cart from "../Images/Shopping-cart-pexels.jpg";
 
-function MenuContainer() {
+const JAL = createContext();
+
+function ShoppingCart(props) {
 
   const PRODUCTS = {
     general: [
@@ -103,63 +103,13 @@ function MenuContainer() {
     initialStateCart[i] = 0
   }
 
-  const [list, setList] = React.useState(PRODUCTS.empanadas);
-  const [search, setSearch] = React.useState("");
   const [cart, setCart] = React.useState(initialStateCart);
-  let filteredList = PRODUCTS.empanadas;
 
-  function clickCategories(e) {
-    setList(PRODUCTS[e.target.dataset.category]);
-  }
-
-  function handleChange(e) {
-    setList(PRODUCTS.empanadas
-      .concat(PRODUCTS.hamburgers)
-      .concat(PRODUCTS.bebidas)
-    );
-  
-    setSearch(e.target.value);
-  }
-
-  search ?
-    filteredList = list
-      .filter(element => {
-        return `${element.name} ${element.description}`
-          .toLowerCase()
-          .includes(search.toLowerCase());
-      })
-  : filteredList = list;
-
-  const increase = e => {
-    setCart({
-      ... cart,
-      [e.target.dataset.product]: cart[e.target.dataset.product] + 1
-    });
-  }
-
-  const decrease = e => {
-    if(cart[e.target.dataset.product] > 0) {
-      setCart({
-        ... cart,
-        [e.target.dataset.product]: cart[e.target.dataset.product] - 1
-      });
-    }
-  }
-
-  const jal = Object.values(cart).reduce((accum, curr) => accum + curr);
-
-  return(
-    <Menu
-      handleChange={handleChange}
-      categories={PRODUCTS.general}
-      clickCategories={clickCategories}
-      list={filteredList}
-      increase={increase}
-      decrease={decrease}
-      amount={cart}
-      totalAmount={jal}
-    />
+  return (
+    <JAL.Provider value={{ PRODUCTS ,cart, setCart}}>
+      {props.children}
+    </JAL.Provider>
   )
 }
 
-export default MenuContainer;
+export { ShoppingCart, JAL };

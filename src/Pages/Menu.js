@@ -1,65 +1,66 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 
-import "./Styles/Menu.css";
+import { JAL } from "../Components/ShoppingCart";
+import MenuStyle from "../Components/MenuStyle";
 
-function Menu(props) {
+function Menu() {
+  const { PRODUCTS, cart, setCart } = useContext(JAL);
 
-  return (
-    <section className="menu">
-      <form action="" className="form" onSubmit={e => e.preventDefault()}>
-        <label htmlFor="search" className="label">
-          <input id="search" type="text" name="search" onChange={props.handleChange} placeholder="Search"/>
-          <i className="fas fa-search"></i>
-        </label>
-      </form>
+  const [list, setList] = React.useState(PRODUCTS.empanadas);
+  const [search, setSearch] = React.useState("");
+  let filteredList = PRODUCTS.empanadas;
 
-      <div className="container-general-articles">
-        <div className="general-articles">
-          <div className="arrow"><i className="fas fa-chevron-left"></i></div>
-          <div className="articles">
-            {props.categories.map(e => {
-              return (
-                <figure onClick={props.clickCategories} data-category={e.category} key={e.id}>
-                  <div style={e.styles} data-category={e.category}></div>
-                  <figcaption data-category={e.category}>{e.name}</figcaption>
-                </figure>
-              )
-            })}
-          </div>
-          <div className="arrow"><i className="fas fa-chevron-right"></i></div>
-        </div>
-      </div>
+  function clickCategories(e) {
+    setList(PRODUCTS[e.target.dataset.category]);
+  }
 
-      <div className="list-of-items">
-        {props.list.map(e => {
-          return (
-            <article key={e.id}>
-              <figure style={e.styles}></figure>
-              <div className="contents">
-                <h4>{e.name}</h4>
-                <p>{e.description}</p>
-                <p>$ {e.cost}</p>
-                <p>{props.amount[e.id]}</p>
-              </div>
-              <div className="button button-left" onClick={props.decrease} data-product={e.id}>
-                <div className="circle" data-product={e.id}>-</div>
-              </div>
-              <div className="button button-right" onClick={props.increase} data-product={e.id}>
-                <div className="circle" data-product={e.id}>+</div>
-              </div>
-            </article>
-          )
-        })}
-      </div>
-      
-      <div>
-        <Link to="/shopping-cart" className="to-shopping-cart">
-          <i className="fas fa-cart-arrow-down"></i>
-          <p className="quantity">{props.totalAmount}</p>
-        </Link>
-      </div>
-    </section>
+  function handleChange(e) {
+    setList(PRODUCTS.empanadas
+      .concat(PRODUCTS.hamburgers)
+      .concat(PRODUCTS.bebidas)
+    );
+  
+    setSearch(e.target.value);
+  }
+
+  search ?
+    filteredList = list
+      .filter(element => {
+        return `${element.name} ${element.description}`
+          .toLowerCase()
+          .includes(search.toLowerCase());
+      })
+  : filteredList = list;
+
+  const increase = e => {
+    setCart({
+      ... cart,
+      [e.target.dataset.product]: cart[e.target.dataset.product] + 1
+    });
+  }
+
+  const decrease = e => {
+    if(cart[e.target.dataset.product] > 0) {
+      setCart({
+        ... cart,
+        [e.target.dataset.product]: cart[e.target.dataset.product] - 1
+      });
+    }
+  }
+
+  const jal = Object.values(cart).reduce((accum, curr) => accum + curr);
+
+  return(
+    <MenuStyle
+      handleChange={handleChange}
+      categories={PRODUCTS.general}
+      clickCategories={clickCategories}
+      list={filteredList}
+      increase={increase}
+      decrease={decrease}
+      amount={cart}
+      totalAmount={jal}
+    />
   )
 }
 
