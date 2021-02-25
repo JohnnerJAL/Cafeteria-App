@@ -22,6 +22,7 @@
   padding: 5px;
   height: 30px;
   font-size: 20px;
+  background-color: var(--color-sombra-claro-rojo-naranja);
 }
 
 .menu .form input:focus {
@@ -49,7 +50,7 @@
 
 .menu .general-articles .arrow {
   display: flex;
-  color: var(--secondary-color);
+  color: var(--color-sombra-oscura-cian);
 }
 
 .menu .general-articles i {
@@ -93,6 +94,7 @@
   position: relative;
   width: 80%;
   margin: auto;
+  background-color: white;
   box-shadow: 1px 1px 16px 4px rgba(128, 128, 128, 0.4);
   text-align: center;
   border-radius: 12px;
@@ -129,7 +131,7 @@
 }
 
 .menu .list-of-items article .contents p:nth-of-type(1) {
-  color: gray;
+  color: var(--color-sombra-oscura-cian);
 }
 
 .menu .list-of-items article .contents p:nth-of-type(2) {
@@ -149,7 +151,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(218, 205, 136);
+  background-color: var(--color-marfil-claro);
   cursor: pointer;
 }
 
@@ -165,7 +167,7 @@
 }
 
 .menu .list-of-items article .circle {
-  border: solid var(--secondary-color);
+  border: solid var(--color-sombra-oscura-cian);
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -173,7 +175,7 @@
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  color: var(--secondary-color);
+  color: var(--color-sombra-oscura-cian);
 }
 
 /*-----------To shopping cart------------*/
@@ -190,7 +192,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--tertiary-color);
+  background-color: var(--color-dorado-ocre);
   border-radius: 24px;
   color: black;
   text-decoration: none;

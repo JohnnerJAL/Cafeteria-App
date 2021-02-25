@@ -1,7 +1,7 @@
 .home {
   min-height: 100vh;
   padding: 20px;
-  background-color: var(--primary-color);
+  background-color: var(--color-turquesa-azul-glauco);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,7 +16,7 @@
 
 .home .button {
   background-color: white;
-  color: var(--primary-color);
+  color: var(--color-turquesa-azul-glauco);
   margin-bottom: 40px;
   padding: 15px;
   border-radius: 12px;
