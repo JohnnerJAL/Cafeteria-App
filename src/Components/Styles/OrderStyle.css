@@ -115,6 +115,7 @@
 
 .order .articles article .button {
   position: absolute;
+  cursor: pointer;
 }
 
 .order .articles article .circle {

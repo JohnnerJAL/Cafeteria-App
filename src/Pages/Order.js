@@ -28,12 +28,32 @@ function Order() {
     });
   });
 
+  const PHONE = 573015555048;
+  const request = [];
+
+  shoppingList.forEach((item, idx) => {
+    request.push(`Producto ${idx+1}
+      ${item.name}: ${values[idx]}
+      descripcion: ${item.description}//
+    `);
+  });
+
+  const MESSAGE = `Nuevo pedido:
+  
+  ${request.join(`
+  `)}
+  `;
+
+  console.log(MESSAGE)
+
   return (
     <OrderStyle
       cartValues={values}
       shoppingList={shoppingList}
       increase={increase}
       decrease={decrease}
+      phone={PHONE}
+      message={MESSAGE}
     />
   )
 }

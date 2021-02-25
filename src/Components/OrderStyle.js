@@ -21,8 +21,8 @@ function OrderStyle(props) {
       <div className="articles">
         {props.shoppingList.map((item, idx) => {
           return (
-            <div className="article-container">
-              <article key={item.id}>
+            <div className="article-container" key={item.id}>
+              <article>
                 <figure style={item.styles}></figure>
                 <div className="contents">
                   <h4>{item.name}</h4>
@@ -61,10 +61,10 @@ function OrderStyle(props) {
         </div>
 
         <div>
-          <Link  to="/order">{/*¡whatsapp?*/}
+          <a href={`https://api.whatsapp.com/send?phone=${props.phone}&text=${props.message}`}>
             <p>Confirmar orden</p>
             <i className="fab fa-whatsapp"></i>
-          </Link>
+          </a>
         </div>
       </div>
     </section>
