@@ -40,7 +40,7 @@ function Menu(props) {
                 <h4>{e.name}</h4>
                 <p>{e.description}</p>
                 <p>$ {e.cost}</p>
-                <p>1</p>
+                <p>{props.amount[e.id]}</p>
               </div>
               <div className="button button-left" onClick={props.decrease} data-product={e.id}>
                 <div className="circle" data-product={e.id}>-</div>
@@ -56,7 +56,7 @@ function Menu(props) {
       <div>
         <Link to="/shopping-cart" className="to-shopping-cart">
           <i className="fas fa-cart-arrow-down"></i>
-          <p className="quantity">2</p>
+          <p className="quantity">{props.totalAmount}</p>
         </Link>
       </div>
     </section>

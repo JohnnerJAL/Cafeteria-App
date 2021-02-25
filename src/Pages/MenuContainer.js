@@ -63,7 +63,7 @@ function MenuContainer() {
         id: "ham1",
         name: "Hamburguesa",
         description: "Hamburguesa sencilla",
-        cost: 1,
+        cost: 5000,
         styles: {
           backgroundImage: `url('${hamburgerImage}')`
         }
@@ -138,13 +138,15 @@ function MenuContainer() {
   }
 
   const decrease = e => {
-    setCart({
-      ... cart,
-      [e.target.dataset.product]: cart[e.target.dataset.product] - 1
-    });
+    if(cart[e.target.dataset.product] > 0) {
+      setCart({
+        ... cart,
+        [e.target.dataset.product]: cart[e.target.dataset.product] - 1
+      });
+    }
   }
 
-  console.log(cart)
+  const jal = Object.values(cart).reduce((accum, curr) => accum + curr);
 
   return(
     <Menu
@@ -154,6 +156,8 @@ function MenuContainer() {
       list={filteredList}
       increase={increase}
       decrease={decrease}
+      amount={cart}
+      totalAmount={jal}
     />
   )
 }
