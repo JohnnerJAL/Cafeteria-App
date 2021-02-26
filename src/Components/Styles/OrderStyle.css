@@ -16,12 +16,12 @@
 
 .order .title h1 {
   font-size: 24px;
-  color: var(--color-sombra-oscura-cian);
+  color: var(--color-dark-shade-of-cyan);
 }
 
 .order .title i {
   transform: scale(2);
-  color: var(--color-dorado-ocre);
+  color: var(--color-ocher-gold);
 }
 
 /*-----------------Alert Message----------------*/
@@ -35,12 +35,12 @@
   width: 90%;
   margin: 0 auto;
   padding: 5px;
-  box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.4);
+  box-shadow: 1px 1px 1px 1px var(--color-shadow);
   border-radius: 12px;
 }
 
 .order .message h1 {
-  color: var(--color-turquesa-azul-glauco);
+  color: var(--color-glaucous-turquoise-blue);
   padding: 5px;
 }
 
@@ -70,7 +70,7 @@
   width: 70%;
   margin: auto;
   transform: translateX(20px);
-  background-color: var(--color-marfil-claro);
+  background-color: var(--color-light-ivory);
   border-radius: 12px;
   text-align: center;
 }
@@ -85,7 +85,7 @@
 
 .order .articles article .contents p:nth-of-type(1) {
   font-size: 14px;
-  color: var(--color-sombra-oscura-cian);
+  color: var(--color-dark-shade-of-cyan);
 }
 
 .order .articles article .contents p:nth-of-type(2) {
@@ -122,8 +122,8 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: var(--color-sombra-oscura-cian);
-  color: white;
+  background-color: var(--color-dark-shade-of-cyan);
+  color: var(--color-white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,14 +153,14 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: white;
+  color: var(--color-white);
   text-decoration: none;
   border-radius: 12px;
 }
 
 .order .resume div:first-child a {
   width: 60%;
-  background-color: var(--color-dorado-ocre);
+  background-color: var(--color-ocher-gold);
 }
 
 .order .resume div a p {
@@ -182,7 +182,7 @@
 
 .order .resume div:last-child a {
   width: 70%;
-  background-color: var(--color-turquesa-azul-glauco);
+  background-color: var(--color-glaucous-turquoise-blue);
   font-size: 20px;
 }
 

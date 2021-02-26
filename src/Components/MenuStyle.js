@@ -8,7 +8,7 @@ function MenuStyle(props) {
     <section className="menu">
       <form action="" className="form" onSubmit={e => e.preventDefault()}>
         <label htmlFor="search" className="label">
-          <input id="search" type="text" name="search" onChange={props.handleChange} placeholder="Search"/>
+          <input id="search" type="text" name="search" onChange={props.handleChange} placeholder="Buscar"/>
           <i className="fas fa-search"></i>
         </label>
       </form>
