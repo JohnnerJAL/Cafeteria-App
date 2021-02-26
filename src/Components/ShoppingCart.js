@@ -45,7 +45,6 @@ function ShoppingCart(props) {
         styles: {
           backgroundImage: `url('${empanadaImage}')`
         }
-
       },
       {
         id: "emp2",

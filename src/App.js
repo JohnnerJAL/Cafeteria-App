@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import Layout from "./Components/Layout";
-import { ShoppingCart} from "./Components/ShoppingCart";
+import { ShoppingCart } from "./Components/ShoppingCart";
 import Menu from "./Pages/Menu";
 import Order from "./Pages/Order";
 

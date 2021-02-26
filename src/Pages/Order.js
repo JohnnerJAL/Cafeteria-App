@@ -28,6 +28,11 @@ function Order() {
     });
   });
 
+  let total = 0;
+  shoppingList.forEach((item, idx) => {
+    total += item.cost * values[idx];
+  });
+
   const PHONE = 573015555048;
   const request = [];
 
@@ -44,8 +49,6 @@ function Order() {
   `)}
   `;
 
-  console.log(MESSAGE)
-
   return (
     <OrderStyle
       cartValues={values}
@@ -54,6 +57,7 @@ function Order() {
       decrease={decrease}
       phone={PHONE}
       message={MESSAGE}
+      total={total}
     />
   )
 }
