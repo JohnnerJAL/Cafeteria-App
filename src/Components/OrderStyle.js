@@ -51,11 +51,7 @@ function OrderStyle(props) {
 
         <div>
           <div className="row">
-            <p>Envío (opcional)</p>
-            <p>$ 2000</p>
-          </div>
-          <div className="row">
-            <p>Total (Sin envio)</p>
+            <p>Total</p>
             <p>$ {props.total}</p>
           </div>
         </div>

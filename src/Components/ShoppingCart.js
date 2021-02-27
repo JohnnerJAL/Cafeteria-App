@@ -6,8 +6,9 @@ const JAL = createContext();
 
 function ShoppingCart(props) {
   const idProducts = PRODUCTS.empanadas
-    .concat(PRODUCTS.hamburgers)
+    .concat(PRODUCTS.hamburgesas)
     .concat(PRODUCTS.bebidas)
+    .concat(PRODUCTS.combos)
     .map(e => e = e.id)
   ;
 

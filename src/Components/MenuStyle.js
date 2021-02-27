@@ -15,7 +15,7 @@ function MenuStyle(props) {
 
       <div className="container-general-articles">
         <div className="general-articles">
-          <div className="arrow"><i className="fas fa-chevron-left"></i></div>
+          <div className="arrow" onClick={props.clickLeftArrow}><i className="fas fa-chevron-left"></i></div>
           <div className="articles">
             {props.categories.map(e => {
               return (
@@ -26,7 +26,7 @@ function MenuStyle(props) {
               )
             })}
           </div>
-          <div className="arrow"><i className="fas fa-chevron-right"></i></div>
+          <div className="arrow" onClick={props.clickRightArrow}><i className="fas fa-chevron-right"></i></div>
         </div>
       </div>
 

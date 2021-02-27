@@ -55,6 +55,11 @@
 .menu .general-articles .arrow {
   display: flex;
   color: var(--color-dark-shade-of-cyan);
+  cursor: pointer;
+}
+
+.menu .general-articles .arrow:hover {
+  color: var(--color-ocher-gold);
 }
 
 .menu .general-articles i {
@@ -69,11 +74,29 @@
 }
 
 .menu .general-articles .articles figure {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   color: var(--color-gray);
   cursor: pointer;
+  opacity: 1;
+}
+
+@keyframes change {
+  from {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+.menu .general-articles .articles figure.visible {
+  display: flex;
+  animation-name: change;
+  animation-duration: 1s;
 }
 
 .menu .general-articles .articles figure:hover {
@@ -106,10 +129,6 @@
   margin-top: 50px;
 }
 
-.menu .list-of-items article.hidden {
-  display: none;
-}
-
 .menu .list-of-items article:first-child {
   margin-top: 0%;
 }
@@ -133,6 +152,7 @@
   justify-content: space-evenly;
   min-height: 150px;
   padding-top: 40px;
+  border: solid transparent;
 }
 
 .menu .list-of-items article .contents p:nth-of-type(1) {

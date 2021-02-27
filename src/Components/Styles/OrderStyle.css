@@ -65,22 +65,25 @@
 }
 
 .order .articles article {
-  position: relative;
-  height: 80px;
+  min-height: 80px;
   width: 70%;
   margin: auto;
   transform: translateX(20px);
   background-color: var(--color-light-ivory);
   border-radius: 12px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .order .articles article .contents {
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 0 40px 0 40px;
+  padding: 5px 40px 5px 40px;
 }
 
 .order .articles article .contents p:nth-of-type(1) {
@@ -95,9 +98,13 @@
 .order .articles article .contents p:last-child {
   position: absolute;
   right: 0%;
+  height: 100%;
   width: 35px;
   font-size: 16px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .order .articles article figure {

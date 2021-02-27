@@ -1,6 +1,7 @@
 import empanadaImage from "../API/Images/Empanadas-pexels.jpg";
 import hamburgerImage from "../API/Images/Hamburger-pexels.jpg";
 import drinkImage from "../API/Images/beer-pexels.jpg";
+import comboImage from "../API/Images/combo-pexels.jpg";
 
 const PRODUCTS = {
   general: [
@@ -15,7 +16,7 @@ const PRODUCTS = {
     {
       id: "gen2",
       name: "Hamburguesa",
-      category: "hamburgers",
+      category: "hamburgesas",
       styles: {
         backgroundImage: `url('${hamburgerImage}')`
       }
@@ -26,6 +27,14 @@ const PRODUCTS = {
       category: "bebidas",
       styles: {
         backgroundImage: `url('${drinkImage}')`
+      }
+    },
+    {
+      id: "gen4",
+      name: "Combos",
+      category: "combos",
+      styles: {
+        backgroundImage: `url('${comboImage}')`
       }
     }
   ],
@@ -51,7 +60,7 @@ const PRODUCTS = {
     }
   ],
 
-  hamburgers: [
+  hamburgesas: [
     {
       id: "ham1",
       name: "Hamburguesa",
@@ -80,6 +89,18 @@ const PRODUCTS = {
       cost: 2200,
       styles: {
         backgroundImage: `url('${drinkImage}')`
+      }
+    }
+  ],
+
+  combos: [
+    {
+      id: "comb1",
+      name: "Hamburguesa + gaseosa",
+      description: "Hamburguesa sencilla + gaseosa 350ml",
+      cost: 6500,
+      styles: {
+        backgroundImage: `url('${comboImage}')`
       }
     }
   ]
