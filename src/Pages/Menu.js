@@ -19,6 +19,18 @@ function Menu() {
     categoriesOnScreen.forEach(category => {
       generals[category].classList.add("visible");
     });
+
+    const arrows = document.querySelectorAll(".menu .general-articles .arrow");
+    if (categoriesOnScreen[0] === 0) {
+      arrows[0].style.color = "var(--color-gray)";
+      arrows[1].style.color = "var(--color-dark-shade-of-cyan)";
+    } else if (categoriesOnScreen[2] === generals.length - 1) {
+      arrows[1].style.color = "var(--color-gray)";
+      arrows[0].style.color = "var(--color-dark-shade-of-cyan)";
+    } else {
+      arrows[0].style.color = "var(--color-dark-shade-of-cyan)";
+      arrows[1].style.color = "var(--color-dark-shade-of-cyan)";
+    }
   });
 
   function clickLeftArrow() {
@@ -30,7 +42,7 @@ function Menu() {
   function clickRightArrow() {
     const generals = document.querySelectorAll(".menu .container-general-articles .general-articles .articles figure");
     if (categoriesOnScreen[2] < generals.length - 1) {
-      setCategoriesOnScreen(categoriesOnScreen.map(e => e + 1))
+      setCategoriesOnScreen(categoriesOnScreen.map(e => e + 1));
     }
   }
 
