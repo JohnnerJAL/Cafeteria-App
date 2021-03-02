@@ -1,7 +1,8 @@
 import empanadaImage from "../API/Images/Empanadas-pexels.jpg";
 import hamburgerImage from "../API/Images/Hamburger-pexels.jpg";
-import drinkImage from "../API/Images/beer-pexels.jpg";
+import beerImage from "../API/Images/beer-pexels.jpg";
 import comboImage from "../API/Images/combo-pexels.jpg";
+import cocaColaImage from "../API/Images/coca-cola-1.5l.png";
 
 const PRODUCTS = {
   general: [
@@ -26,7 +27,7 @@ const PRODUCTS = {
       name: "Bebidas",
       category: "bebidas",
       styles: {
-        backgroundImage: `url('${drinkImage}')`
+        backgroundImage: `url('${beerImage}')`
       }
     },
     {
@@ -79,7 +80,7 @@ const PRODUCTS = {
       description: "gaseosa 2L",
       cost: 3000,
       styles: {
-        backgroundImage: `url('${drinkImage}')`
+        backgroundImage: `url('${cocaColaImage}')`
       }
     },
     {
@@ -88,7 +89,7 @@ const PRODUCTS = {
       description: "cerveza 350ml",
       cost: 2200,
       styles: {
-        backgroundImage: `url('${drinkImage}')`
+        backgroundImage: `url('${beerImage}')`
       }
     }
   ],
